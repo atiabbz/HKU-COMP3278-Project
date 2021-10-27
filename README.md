@@ -43,6 +43,7 @@ to meet the below requirements.
 - **Group**: 1-5 students as a group.
 - **GUI**: Each group may design GUI based on the understanding of the above user requirement -- *Make your own design choice*.
 - **Database**: Your database should have at least **five** tables.
+  <!-- from Sep 9 Tutorial page 2 -->
   - Customer
   - Account
   - Transaction
