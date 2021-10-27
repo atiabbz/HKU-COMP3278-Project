@@ -1,4 +1,5 @@
 # Group Project
+
 > **Deadline: 11:59PM - 17 November, 2021**
 
 ## Project Description
@@ -57,6 +58,7 @@ to meet the below requirements.
 - Use of any other development packages is allowed, except that the DBMS must be MySQL.
 
 ## Assessment
+
 - **20%** of final mark
   - Software development **[10%]**
     - Database implementation **[6%]**
@@ -74,8 +76,11 @@ to meet the below requirements.
         - **Tables**
       - Difficulties encountered
         - **and how they were solved**
+
 - Live demo is allowed for stably working program
+
 > **Bonus points**
-  -  Creative GUI desgin
-  -  Creative software functions
-  -  Creative DB design
+
+- Creative GUI desgin
+- Creative software functions
+- Creative DB design
