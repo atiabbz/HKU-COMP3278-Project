@@ -1,0 +1,2 @@
+def wazup():
+    return True

@@ -1,0 +1,64 @@
+{% extends "crud/layout.html" %} {% block body %}
+
+<h1>Hello, Jack!</h1>
+
+<p><span class="fw-bold">Last login time: </span>5 November 2021, 4:20PM</p>
+
+<p><a href="" class="text-decoration-none">Login history</a></p>
+
+<div class="row">
+  <div class="col">
+    <h2>Accounts</h2>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <p>
+            <a href=""
+              ><span class="fw-bold text-body" style="float: left"
+                >HKD Current</span
+              ></a
+            ><a href=""
+              ><span style="float: right" class="text-body">69,000.00</span></a
+            >
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p>
+            <a href=""
+              ><span class="fw-bold text-body" style="float: left"
+                >HKD Savings</span
+              ></a
+            ><a href=""
+              ><span style="float: right" class="text-body">420,000.00</span></a
+            >
+          </p>
+        </li>
+      </ul>
+    </div>
+    <p></p>
+  </div>
+  <div class="col">
+    <h2>Currency Converter</h2>
+    <div
+      style="
+        width: 50%;
+        height: auto;
+        border: 1px solid #2d6ab4;
+        text-align: center;
+        font-size: 16px;
+        background-color: #ffffff;
+      "
+      class="rounded"
+    >
+      <script
+        type="text/javascript"
+        src="https://w.fxexchangerate.com/converter.php?fm=USD&ft=EUR&lg=en&am=1&ty=1"
+      ></script>
+    </div>
+  </div>
+</div>
+
+<!-- Currency Converter Script - FxExchangeRate.com  -->
+
+<!--  End of Currency Converter Script -  FxExchangeRate.com -->
+{% endblock %}

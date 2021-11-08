@@ -1,0 +1,6 @@
+[client]
+database = crud
+user = root
+password = root
+default-character-set = utf8
+sql_mode = STRICT_ALL_TABLES
