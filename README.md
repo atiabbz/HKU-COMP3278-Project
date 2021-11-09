@@ -2,6 +2,19 @@
 
 > **Deadline: 11:59PM - 17 November, 2021**
 
+## Backend Instructions
+
+1. Create virtual Python environment
+   ```python3 -m venv env```
+2. Activate the environment
+   ```env/Scripts/Activate```
+3. Install all the required packages
+   ```pip install -r requirements.txt```
+4. cd into server project
+   ```cd crudproject```
+5. Start the server
+   ```python manage.py runserver```
+
 ## Project Description
 
 You are invited to develop an **Intelligent Know Your Customer (iKYC)** system with **facial ID login function**.
