@@ -5,11 +5,12 @@
 ## Backend Instructions
 
 1. Create virtual Python environment
-   ```python3 -m venv env```
+   ```python -m venv env```
 2. Activate the environment
-   ```env/Scripts/Activate```
+   Windows: ```env/Scripts/Activate```
+   Mac: ```source env/bin/activate```
 3. Install all the required packages
-   ```pip install -r requirements.txt```
+   ```python -m pip install -r requirements.txt```
 4. cd into server project
    ```cd crudproject```
 5. Start the server
