@@ -4,12 +4,13 @@
 
 ## Backend Instructions
 
-1. Create virtual Python environment
+0. Mac: ```brew install mysql```
+1. Create virtual Python environment (first time only)
    ```python -m venv env```
 2. Activate the environment
    Windows: ```env/Scripts/Activate```
    Mac: ```source env/bin/activate```
-3. Install all the required packages
+3. Install all the required packages (first time only)
    ```python -m pip install -r requirements.txt```
 4. cd into server project
    ```cd crudproject```

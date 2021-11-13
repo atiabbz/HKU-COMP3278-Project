@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
@@ -15,6 +16,13 @@ import faces
 # Create your views here.
 def index(request):
     return render(request, "crud/index.html")
+
+
+def js_on(request):
+    # query database
+    # get results
+    # create dictionary
+    return JsonResponse({"foo": "bar"})
 
 
 def login(request):

@@ -11,4 +11,5 @@ urlpatterns = [
     path("notes/delete", views.delete, name="delete"),
     path("layout", views.layout, name="layout"),
     path("landing", views.landing, name="landing"),
+    path('json', views.js_on, name='json'),
 ]
