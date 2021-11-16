@@ -1,5 +1,5 @@
--- CREATE DATABASE `group7project`;
--- USE `group7project`;
+CREATE DATABASE `group7project`;
+USE `group7project`;
 
 CREATE TABLE customer (
   customer_id INT NOT NULL PRIMARY KEY,
