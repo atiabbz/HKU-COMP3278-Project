@@ -21,6 +21,11 @@
 5. cd into server project: ```cd crudproject```
 6. Start the server: ```python manage.py runserver```
 
+### Helpful links:
+
+1. Python virtual environments: <https://realpython.com/python-virtual-environments-a-primer/>
+2. Django servers: <https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server>
+
 ## Facial Recognition Training
 
 1. While the server is running go to <http://127.0.0.1:8000/train> on a new tab/browser.
@@ -28,6 +33,8 @@
 3. Patiently wait until the training is completed.
 4. The browser should be redirected to the login page now.
 5. You will be able to login by clicking on the face recognition login button. (Note: The speed of logging in differs in each system)
+
+**Note**: We have noticed significant differences in facial recognition completion across a variety of hardware. Experimentation of confidence value in ```./crudproject/FaceRecognition/faces.py | line 63``` is advised.
 
 ## Project Description
 
