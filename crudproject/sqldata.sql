@@ -5,7 +5,7 @@ INSERT INTO account (account_id, customer_id, account_name, balance, currency_is
 INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837552', '131100', 'Jack Chan Ltd', '5648', 'USD', 'USD Savings');
 
 INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101000', '54687', '2019-08-01 15:00:03', 'transfer', '0', '1772837550', '1772837551');
-INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101001', '728364', '2019-12-04 09:47:12', 'transfer', '3150', '1772837551', '1772837552');
+INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101001', '7283', '2019-12-04 09:47:12', 'transfer', '3150', '1772837551', '1772837552');
 INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101002', '435192', '2021-08-01 15:00:03', 'transfer', '0', '1772837551', '1772837550');
 INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101003', '3000', '2021-08-02 16:10:23', 'bill', '0', '1772837551', '1772837550');
 
