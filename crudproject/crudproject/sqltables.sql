@@ -1,5 +1,8 @@
--- CREATE DATABASE `group7project`;
--- USE `group7project`;
+DROP DATABASE IF EXISTS `group7project`;
+
+CREATE DATABASE `group7project`;
+
+USE `group7project`;
 
 CREATE TABLE customer (
   customer_id VARCHAR(50) NOT NULL PRIMARY KEY,
@@ -15,7 +18,8 @@ CREATE TABLE account (
   account_id VARCHAR(50) NOT NULL PRIMARY KEY,
   customer_id VARCHAR(50) NOT NULL,
   account_name VARCHAR(100) NOT NULL,
-  balance INT NOT NULL, -- in terms of CENTS with 2 dec places (E.G. $100.45 will be 10045)
+  balance INT NOT NULL,
+  -- in terms of CENTS with 2 dec places (E.G. $100.45 will be 10045)
   currency_iso VARCHAR(5) NOT NULL,
   actype VARCHAR(255) NOT NULL,
   FOREIGN KEY (customer_id) REFERENCES customer (customer_id)
@@ -23,7 +27,8 @@ CREATE TABLE account (
 
 CREATE TABLE transaction (
   trans_id VARCHAR(50) NOT NULL PRIMARY KEY,
-  amount INT NOT NULL, -- in terms of CENTS with 2 dec places (E.G. $100.45 will be 10045)
+  amount INT NOT NULL,
+  -- in terms of CENTS with 2 dec places (E.G. $100.45 will be 10045)
   trans_datetime TIMESTAMP NOT NULL,
   type VARCHAR(50) NOT NULL,
   from_account VARCHAR(50) NOT NULL,
