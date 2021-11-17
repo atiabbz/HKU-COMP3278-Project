@@ -21,7 +21,7 @@
 5. cd into server project: ```cd crudproject```
 6. Start the server: ```python manage.py runserver```
 
-### Helpful links:
+### Helpful links
 
 1. Python virtual environments: <https://realpython.com/python-virtual-environments-a-primer/>
 2. Django servers: <https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server>
