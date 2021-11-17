@@ -4,9 +4,11 @@
 
 ## Preparing Database
 
-1. Run ```sqltables.sql``` file to create the tables.
-2. Run ```sqldata.sql``` to populate tables with placeholder data.
-3. Open ```./crudproject/mysql_option_file.cnf``` and change ```user``` and ```password``` field values according to credentials of local installation of MySQL.
+1. Open MySQL Workbench and add a new MySQL Connection.
+2. Set your own connection name, username and password
+3. Click into file then Open SQL Script. Run ```sqltables.sql``` file to create the tables.
+4. Click onto the group7project database, go to file and Open SQL Script. Run ```sqldata.sql``` to populate tables with placeholder data.
+5. Open ```./crudproject/mysql_option_file.cnf``` and change ```user``` and ```password``` field values according to credentials of local installation of MySQL.
 
 ## Running Server
 
@@ -21,7 +23,7 @@
 
 ## Facial Recognition Training
 
-1. While the server is running go to <http://127.0.0.1:8000/train> on a browser.
+1. While the server is running go to <http://127.0.0.1:8000/train> on a new tab/browser.
 2. The face capture script should start running.
 3. Wait until training is complete.
 4. The browser should be redirected to the login page now.
