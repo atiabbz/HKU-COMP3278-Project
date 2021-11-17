@@ -6,6 +6,7 @@
 
 1. Run ```sqltables.sql``` file to create the tables.
 2. Run ```sqldata.sql``` to populate tables with placeholder data.
+3. Open ```./crudproject/mysql_option_file.cnf``` and change ```user``` and ```password``` field values according to credentials of local installation of MySQL.
 
 ## Running Server
 
