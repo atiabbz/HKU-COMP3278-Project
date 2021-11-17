@@ -16,7 +16,7 @@
 1. Make sure terminal is at repository root.
 2. Create virtual Python environment: ```python -m venv env```
    1. (```python3``` instead sometimes on Mac)
-3. Activate the environment -- Windows: ```env/Scripts/Activate``` | Mac: ```source env/bin/activate```
+3. Activate the environment -- Windows (**PowerShell**): ```env/Scripts/Activate``` | Mac: ```source env/bin/activate```
 4. Install all the required packages: ```python -m pip install -r requirements.txt```
 5. cd into server project: ```cd crudproject```
 6. Start the server: ```python manage.py runserver```
@@ -25,6 +25,7 @@
 
 1. Python virtual environments: <https://realpython.com/python-virtual-environments-a-primer/>
 2. Django servers: <https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server>
+3. Windows PowerShell script execution policy (Example 6): <https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.2#example-6--set-the-execution-policy-for-the-current-powershell-session>
 
 ## Facial Recognition Training
 
