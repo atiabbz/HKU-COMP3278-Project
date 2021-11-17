@@ -16,8 +16,11 @@ def main():
     user_name = "Jack"
     NUM_IMGS = 400
 
-    dataPath = os.path.abspath("./FaceRecognition/data")
-    shutil.rmtree(dataPath)
+    try:
+        dataPath = os.path.abspath("./FaceRecognition/data")
+        shutil.rmtree(dataPath)
+    except:
+        pass
     dataPath = os.path.abspath(f"./FaceRecognition/data/{user_name}")
     os.makedirs(dataPath)
 
