@@ -2,20 +2,16 @@
 
 > **Deadline: 11:59PM - 17 November, 2021**
 
-## Backend Instructions
+## Setup Instructions
 
-0. Mac: ```brew install mysql```
-1. Create virtual Python environment (first time only)
-   ```python -m venv env```
-2. Activate the environment
-   Windows: ```env/Scripts/Activate```
-   Mac: ```source env/bin/activate```
-3. Install all the required packages (first time only)
-   ```python -m pip install -r requirements.txt```
-4. cd into server project
-   ```cd crudproject```
-5. Start the server
-   ```python manage.py runserver```
+0. Mac: ```brew install mysql``` (from a group member's experience)
+1. Make sure terminal is at repository root.
+2. Create virtual Python environment: ```python -m venv env```
+   1. (```python3``` instead sometimes on Mac)
+3. Activate the environment -- Windows: ```env/Scripts/Activate``` | Mac: ```source env/bin/activate```
+4. Install all the required packages: ```python -m pip install -r requirements.txt```
+5. cd into server project: ```cd crudproject```
+6. Start the server: ```python manage.py runserver```
 
 ## Project Description
 
