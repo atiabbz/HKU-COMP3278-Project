@@ -1,8 +1,8 @@
 INSERT INTO customer (customer_id, name_first, name_middle, name_last, date_of_birth, phone, email) VALUES ('131100', 'Jack', '', 'Chan', '2000-07-04', '91728365', 'jackchan@gmail.com');
 
 INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837550', '131100', 'Jack Chan Ltd', '8789091', 'HKD', 'HKD Savings');
-INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837551', '131100', 'Jack Chan Ltd', '1000293', 'HKD', 'HKD Current');
-INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837552', '131100', 'Jack Chan Ltd', '5648', 'USD', 'USD Savings');
+INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837551', '131100', 'Jack Chan L', '1000293', 'HKD', 'HKD Current');
+INSERT INTO account (account_id, customer_id, account_name, balance, currency_iso, actype) VALUES ('1772837552', '131100', 'Jack Chan Lt', '5648', 'USD', 'USD Savings');
 
 INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101000', '54687', '2019-08-01 15:00:03', 'transfer', '0', '1772837550', '1772837551');
 INSERT INTO transaction (trans_id, amount, trans_datetime, type, charges, from_account, to_account) VALUES ('100000010101001', '7283', '2019-12-04 09:47:12', 'transfer', '3150', '1772837551', '1772837552');
