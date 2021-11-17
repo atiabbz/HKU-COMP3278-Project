@@ -38,7 +38,7 @@ cap = cv2.VideoCapture(0)
 # 3 Define pysimplegui setting
 layout =  [
     [sg.Text('Setting', size=(18,1), font=('Any',18),text_color='#1c86ee' ,justification='left')],
-    [sg.Text('Confidence'), sg.Slider(range=(0,100),orientation='h', resolution=1, default_value=30, size=(15,15), key='confidence')],
+    [sg.Text('Confidence'), sg.Slider(range=(0,100),orientation='h', resolution=1, default_value=60, size=(15,15), key='confidence')],
     [sg.OK(), sg.Cancel()]
       ]
 win = sg.Window('iKYC System',
