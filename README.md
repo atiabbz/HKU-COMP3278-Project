@@ -89,8 +89,8 @@ to meet the below requirements.
 ## Development Tools
 
 - **Face Recognition**: Python + OpenCV *(full code provided)*
-- **GUI**: PySimpleGUI / HTML *TODO*
-- **Database**: Python + MySQL *(sample code provided)*
+- **GUI**: Django Templates + Bootstrap
+- **Database**: Django + MySQL
 - Use of any other development packages is allowed, except that the DBMS must be MySQL.
 
 ## Assessment
