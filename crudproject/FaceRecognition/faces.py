@@ -7,12 +7,13 @@ import pickle
 from datetime import datetime
 import sys
 import os
+import time
 
 
 def main():
     # 1 Create database connection
     myconn = mysql.connector.connect(
-        host="localhost", user="root", passwd="root", database="facerecognition"
+        host="localhost", user="root", passwd="root", database="group7project"
     )
     date = datetime.utcnow()
     now = datetime.now()
@@ -57,6 +58,7 @@ def main():
             # predict the id and confidence for faces
             id_, conf = recognizer.predict(roi_gray)
 
+
             # 3.1 If the face is recognized
             if conf >= 60:
                 # print(id_)
@@ -72,45 +74,46 @@ def main():
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), (2))
 
                 # Find the customer's information in the database.
-                select = (
-                    "SELECT customer_id, name, DAY(login_date), MONTH(login_date), YEAR(login_date) FROM Customer WHERE name='%s'"
-                    % (name)
-                )
-                name = cursor.execute(select)
-                result = cursor.fetchall()
-                # print(result)
-                data = "error"
+                # select = (
+                #     "SELECT customer_id, name, DAY(login_date), MONTH(login_date), YEAR(login_date) FROM Customer WHERE name='%s'"
+                #     % (name)
+                # )
+                # name = cursor.execute(select)
+                # result = cursor.fetchall()
+                # # print(result)
+                # data = "error"
 
-                for x in result:
-                    data = x
+                # for x in result:
+                #     data = x
 
-                # If the customer's information is not found in the database
-                if data == "error":
-                    print("The customer", current_name, "is NOT FOUND in the database.")
+                # # If the customer's information is not found in the database
+                # if data == "error":
+                #     print("The customer", current_name, "is NOT FOUND in the database.")
 
                 # If the customer's information is found in the database
-                else:
-                    """
-                    Implement useful functions here.
+                # else:
+                    # """
+                    # Implement useful functions here.
 
 
-                    """
+                    # """
                     # Update the data in database
-                    update = "UPDATE Customer SET login_date=%s WHERE name=%s"
-                    val = (date, current_name)
-                    cursor.execute(update, val)
-                    update = "UPDATE Customer SET login_time=%s WHERE name=%s"
-                    val = (current_time, current_name)
-                    cursor.execute(update, val)
-                    myconn.commit()
+                    # update = "UPDATE Customer SET login_date=%s WHERE name=%s"
+                    # val = (date, current_name)
+                    # cursor.execute(update, val)
+                    # update = "UPDATE Customer SET login_time=%s WHERE name=%s"
+                    # val = (current_time, current_name)
+                    # cursor.execute(update, val)
+                    # myconn.commit()
 
-                    hello = ("Hello ", current_name, "Welcom to the iKYC System")
-                    print(hello)
-                    engine.say(hello)
-                    # engine.runAndWait()
-                    cap.release()
-                    cv2.destroyAllWindows()
-                    return True
+                    # hello = ("Hello ", current_name, "Welcom to the iKYC System")
+                    # print(hello)
+                    # engine.say(hello)
+                # engine.runAndWait()
+
+                cap.release()
+                cv2.destroyAllWindows()
+                return name
 
             # 3.2 If the face is unrecognized
             else:

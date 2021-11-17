@@ -1,0 +1,122 @@
+{% extends "crud/layout.html" %} {% block body %}
+<div>
+  <a href="/home?username={{username}}" class="text-decoration-none">
+    <button class="btn btn-sm btn-outline-dark">Home</button>
+  </a>
+  <a
+    href="/transactions?username={{username}}&account=all"
+    class="text-decoration-none"
+  >
+    <button class="btn btn-sm btn-outline-dark active">Transactions</button>
+  </a>
+  <span style="float: right">
+    <a href="/settings?username={{username}}" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Settings</button>
+    </a>
+    <a href="/logout" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Logout</button>
+    </a>
+  </span>
+  <p></p>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h2>Transactions</h2>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        {% for transaction in transactions %}
+        <li class="list-group-item">
+          <p>
+            <b>{{transaction.trans_id}}</b>
+            <span class="fw-bold" style="float: right"
+              >{{transaction.amount}}</span
+            >
+          </p>
+          <span class="fst-italic text-secondary">
+            <b>From:</b> {{transaction.from_account}}
+            <b>To:</b> {{transaction.to_account}}
+            <br />
+            <b>Time:</b> {{transaction.trans_datetime}}
+            <br />
+            <b>Type:</b> {{transaction.type}}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <h2>Filters</h2>
+    <p><i>fields marked * are mandatory</i></p>
+    <div class="w-75">
+      <p>
+        <label class="form-label" for="fromDate">From Date*</label>
+        <input class="form-control" type="date" id="fromDate" />
+      </p>
+
+      <p>
+        <label class="form-label" for="toDate">To Date*</label>
+        <input class="form-control" type="date" id="toDate" />
+      </p>
+
+      <p>
+        <label class="form-label" for="fromTime">From Time</label>
+        <input class="form-control" type="time" id="fromTime" value="00:00" />
+      </p>
+
+      <p>
+        <label class="form-label" for="toTime">To Time</label>
+        <input class="form-control" type="time" id="toTime" value="23:59" />
+      </p>
+
+      <p>
+        <label class="form-label" for="minAmount">Minimum Amount</label>
+        <input
+          class="form-control"
+          min="0"
+          value="0.00"
+          type="number"
+          step="0.01"
+          id="minAmount"
+        />
+      </p>
+
+      <p>
+        <label class="form-label" for="maxAmount">Maximum Amount</label>
+        <input
+          class="form-control"
+          min="0"
+          value="999999999.99"
+          type="number"
+          step="0.01"
+          id="maxAmount"
+        />
+      </p>
+    </div>
+
+    <button class="btn btn-outline-dark" id="apply">Apply</button>
+  </div>
+</div>
+&nbsp; {% endblock %} {% block script %}
+<script>
+  document.querySelector("#apply").onclick = () => {
+    const minTime =
+      document.querySelector("#fromDate").value +
+      " " +
+      document.querySelector("#fromTime").value;
+    const maxTime =
+      document.querySelector("#toDate").value +
+      " " +
+      document.querySelector("#toTime").value;
+    const minAmount = Number(document.querySelector("#minAmount").value) * 100;
+    const maxAmount = Number(document.querySelector("#maxAmount").value) * 100;
+
+    const params = new URL(document.location).searchParams;
+    const account = params.get("account");
+    const username = params.get("username");
+
+    window.location.href = `http://127.0.0.1:8000/transactions?username=${username}&account=${account}&minTime=${minTime}&maxTime=${maxTime}&minAmount=${minAmount}&maxAmount=${maxAmount}`;
+  };
+</script>
+{% endblock%}

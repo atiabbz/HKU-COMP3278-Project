@@ -1,0 +1,114 @@
+{% extends "crud/layout.html" %} {% block body %}
+
+<div>
+  <a href="/home?username={{username}}" class="text-decoration-none">
+    <button class="btn btn-sm btn-outline-dark active">Home</button>
+  </a>
+  <a
+    href="/transactions?username={{username}}&account=all"
+    class="text-decoration-none"
+  >
+    <button class="btn btn-sm btn-outline-dark">Transactions</button>
+  </a>
+  <span style="float: right">
+    <a href="/settings?username={{username}}" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Settings</button>
+    </a>
+    <a href="/logout" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Logout</button>
+    </a>
+  </span>
+  <p></p>
+</div>
+
+<h1>Hello, {{username }}!</h1>
+
+<p>
+  <span class="fw-bold">Last login time: </span
+  >{{login_details.0.login_datetime}}
+</p>
+
+<p>
+  <a href="/history?username={{username}}" class="text-decoration-none"
+    >Login history</a
+  >
+</p>
+
+<div class="row">
+  <div class="col">
+    <h2>Accounts</h2>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        {% for account in accounts %}
+        <li class="list-group-item">
+          <p>
+            <a
+              href="/transactions?username={{username}}&account={{account.account_id}}"
+              ><span class="fw-bold text-body" style="float: left"
+                >{{account.actype}} <i>{{account.account_id}}</i></span
+              ></a
+            ><span style="float: right" class="text-body"
+              >{{account.currency_iso}} {{account.balance}}</span
+            >
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p></p>
+
+    <h2>Transfer</h2>
+    <label class="form-label fw-bold" for="fromAccount">From</label>
+    <input class="form-control w-75" type="text" id="fromAccount" />
+
+    <label class="form-label fw-bold" for="toAccount">To</label>
+    <input class="form-control w-75" type="text" id="toAccount" />
+
+    <label class="form-label fw-bold" for="amount">Amount</label>
+    <input class="form-control w-75" type="text" id="amount" />
+
+    <p></p>
+    <button type="button" class="btn btn-outline-dark" id="transfer">
+      Confirm
+    </button>
+    <p></p>
+  </div>
+  <div class="col">
+    <h2>Currency Converter</h2>
+    <div
+      style="
+        width: 50%;
+        height: auto;
+        border: 1px solid #343a40;
+        text-align: center;
+        color: #343a40;
+        font-size: 16px;
+        background-color: #ffffff;
+      "
+      class="rounded"
+    >
+      <script
+        type="text/javascript"
+        src="https://w.fxexchangerate.com/converter.php?fm=USD&ft=EUR&lg=en&am=1&ty=1"
+      ></script>
+    </div>
+  </div>
+</div>
+
+<!-- Currency Converter Script - FxExchangeRate.com  -->
+
+<!--  End of Currency Converter Script -  FxExchangeRate.com -->
+{% endblock %} {% block script %}
+<script>
+  document.querySelector("#transfer").onclick = () => {
+    const fromAcc = document.querySelector("#fromAccount").value;
+    const toAcc = document.querySelector("#toAccount").value;
+    const amount = document.querySelector("#amount").value;
+
+    const params = new URL(document.location).searchParams;
+    const username = params.get("username");
+
+    window.location.href = `http://127.0.0.1:8000/transfer?username=${username}&fromAcc=${fromAcc}&toAcc=${toAcc}&amount=${amount}`;
+  };
+</script>
+{% endblock %}

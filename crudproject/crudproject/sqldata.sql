@@ -28,4 +28,3 @@ INSERT INTO login_details (username, login_datetime)  VALUES ('Jack', '2019-09-2
 INSERT INTO login_details (username, login_datetime)  VALUES ('Jack', '2020-07-14 12:34:13');
 INSERT INTO login_details (username, login_datetime)  VALUES ('Jack', '2020-10-25 15:40:49');
 INSERT INTO login_details (username, login_datetime)  VALUES ('Jack', '2021-01-09 14:02:14');
-INSERT INTO login_details (username, login_datetime)  VALUES ('Jack', '2021-12-01 09:34:27');

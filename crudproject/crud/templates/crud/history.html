@@ -1,0 +1,32 @@
+{% extends "crud/layout.html" %} {% block body %}
+<div>
+  <a href="/home?username={{username}}" class="text-decoration-none">
+    <button class="btn btn-sm btn-outline-dark">Home</button>
+  </a>
+  <a
+    href="/transactions?username={{username}}&account=all"
+    class="text-decoration-none"
+  >
+    <button class="btn btn-sm btn-outline-dark">Transactions</button>
+  </a>
+  <span style="float: right">
+    <a href="/settings?username={{username}}" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Settings</button>
+    </a>
+    <a href="/logout" class="text-decoration-none">
+      <button class="btn btn-sm btn-outline-dark">Logout</button>
+    </a>
+  </span>
+  <p></p>
+</div>
+
+<h1>History</h1>
+
+<div class="card w-50">
+  <ul class="list-group list-group-flush">
+    {% for record in login_details %}
+    <li class="list-group-item">{{record.login_datetime}}</li>
+    {% endfor %}
+  </ul>
+</div>
+&nbsp; {% endblock %}

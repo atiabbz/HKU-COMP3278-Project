@@ -16,14 +16,12 @@
       background-color: white;
       height: 100vh;
     }
-    body {
+    /* body {
       background: linear-gradient(-45deg, #cbe4f9, #cdf5f6, #eff9da, #f9ebdf);
-      /* #f9d8d6,
-        #d6cdea */
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       height: 100vh;
-    }
+    } */
 
     @keyframes gradient {
       0% {
@@ -54,7 +52,7 @@
   </head>
   <body>
     <!-- &nbsp; -->
-    <div class="container shadow">
+    <div class="container">
       <a class="link-dark text-decoration-none" href="/">
         <p class="display-1">
           <img
@@ -67,55 +65,8 @@
         </p>
       </a>
       <hr />
-      <input
-        type="radio"
-        class="btn-check"
-        name="btnradio"
-        id="btnradio1"
-        autocomplete="off"
-        checked
-      />
-      <label class="btn btn-outline-secondary btn-sm" for="btnradio1"
-        >Transaction History</label
-      >
-
-      <input
-        type="radio"
-        class="btn-check"
-        name="btnradio"
-        id="btnradio2"
-        autocomplete="off"
-      />
-      <label class="btn btn-outline-secondary btn-sm" for="btnradio2"
-        >Account Details</label
-      >
-
-      <input
-        type="radio"
-        class="btn-check"
-        name="btnradio"
-        id="btnradio3"
-        autocomplete="off"
-      />
-      <label class="btn btn-outline-secondary btn-sm" for="btnradio3"
-        >Budget Analysis</label
-      >
-      <span style="float: right">
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio4"
-          autocomplete="off"
-        />
-        <label class="btn btn-outline-secondary btn-sm" for="btnradio4"
-          >Settings</label
-        >
-      </span>
-      <p></p>
       {% block body %} {% endblock %}
     </div>
-    <!-- &nbsp; -->
   </body>
   {% block script %} {% endblock %}
 </html>

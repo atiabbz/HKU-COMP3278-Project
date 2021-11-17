@@ -1,11 +1,55 @@
 {% extends "crud/layout.html" %} {% block body %}
-<form action="">
-  <label for="username" class="form-label fw-bold">Username</label>
-  <input class="form-control" id="username" name="username" />
-  <p></p>
-  <button type="button" class="btn btn-primary btn-sm">Facial Login</button>
-</form>
-<p></p>
-<a href="" class="text-decoration-none">Login with password?</a> <br />
-<a href="" class="text-decoration-none">Forgot password?</a>
+
+<h1>Hello!</h1>
+
+<div class="row">
+  <div class="col text-center">
+    <p></p>
+    <a href="/facial">
+      <button class="btn btn-outline-dark h-75 w-50 fs-1">☺</button>
+    </a>
+  </div>
+  <div class="col">
+    <label for="username" class="form-label fw-bold">Username</label>
+    <input
+      class="form-control w-75"
+      id="username"
+      name="username"
+      autocomplete="off"
+    />
+    <label for="password" class="form-label fw-bold">Password</label>
+    <input
+      type="password"
+      class="form-control w-75"
+      id="password"
+      name="password"
+      autocomplete="off"
+    />
+    <p></p>
+    <button type="button" class="btn btn-outline-dark" id="login">Login</button>
+    <p></p>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  document.querySelector("#login").onclick = async () => {
+    creds = {
+      username: document.querySelector("#username").value,
+      password: document.querySelector("#password").value,
+    };
+    console.log(creds);
+    const response = await fetch("/login", {
+      method: "POST",
+      body: JSON.stringify(creds),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.login) {
+          window.location.href = `http://127.0.0.1:8000/home?username=${creds.username}`;
+        } else {
+          window.location.href = "http://127.0.0.1:8000/error";
+        }
+      });
+  };
+</script>
 {% endblock %}
