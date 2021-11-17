@@ -7,7 +7,7 @@
 1. Open MySQL Workbench and add a new MySQL Connection.
 2. Set your own connection name, username and password
 3. Click into file then Open SQL Script. Run ```sqltables.sql``` file to create the tables.
-4. Click onto the group7project database, go to file and Open SQL Script. Run ```sqldata.sql``` to populate tables with placeholder data.
+4. Click onto the ```group7project``` database, go to file and Open SQL Script. Run ```sqldata.sql``` to populate tables with placeholder data.
 5. Open ```./crudproject/mysql_option_file.cnf``` and change ```user``` and ```password``` field values according to credentials of local installation of MySQL.
 
 ## Running Server
