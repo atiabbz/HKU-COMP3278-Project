@@ -1,6 +1,7 @@
 # Custom
 */FaceRecognition/data/*
 train.yml
+labels.pickle
 .vscode
 
 # Byte-compiled / optimized / DLL files
