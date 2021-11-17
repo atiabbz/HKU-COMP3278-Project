@@ -65,6 +65,7 @@ def main():
 
         # Display the resulting frame
         cv2.imshow("Video", frame)
+        cv2.setWindowProperty("Video", cv2.WND_PROP_TOPMOST, 1)
         # Store the captured images in `data/Jack`
         imagePath = os.path.abspath(
             "./FaceRecognition/data/{}/{}{:03d}.jpg".format(user_name, user_name, cnt)

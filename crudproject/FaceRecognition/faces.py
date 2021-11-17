@@ -12,13 +12,13 @@ import time
 
 def main():
     # 1 Create database connection
-    myconn = mysql.connector.connect(
-        host="localhost", user="root", passwd="root", database="group7project"
-    )
-    date = datetime.utcnow()
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    cursor = myconn.cursor()
+    # myconn = mysql.connector.connect(
+    #     host="localhost", user="root", passwd="root", database="group7project"
+    # )
+    # date = datetime.utcnow()
+    # now = datetime.now()
+    # current_time = now.strftime("%H:%M:%S")
+    # cursor = myconn.cursor()
 
     # 2 Load recognize and read label from model
     recognizer = cv2.face.LBPHFaceRecognizer_create()

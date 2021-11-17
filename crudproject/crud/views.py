@@ -197,7 +197,7 @@ def error(request):
     return render(request, "crud/error.html")
 
 
-def retrain(request):
+def train_(request):
     face_capture.main()
     train.main()
     return redirect("index")
