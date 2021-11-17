@@ -62,7 +62,7 @@ to meet the below requirements.
     - Time
     - Amount
 
-- The transactions can be presented in the GUI. **`(???)`**
+- The transactions can be presented in the GUI.
 
 ## Further Information
 
