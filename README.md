@@ -2,7 +2,12 @@
 
 > **Deadline: 11:59PM - 17 November, 2021**
 
-## Setup Instructions
+## Preparing Database
+
+1. Run ```sqltables.sql``` file to create the tables.
+2. Run ```sqldata.sql``` to populate tables with placeholder data.
+
+## Running Server
 
 0. Mac: ```brew install mysql``` (from a group member's experience)
 1. Make sure terminal is at repository root.
@@ -12,6 +17,13 @@
 4. Install all the required packages: ```python -m pip install -r requirements.txt```
 5. cd into server project: ```cd crudproject```
 6. Start the server: ```python manage.py runserver```
+
+## Facial Recognition Training
+
+1. While the server is running go to <http://127.0.0.1:8000/train> on a browser.
+2. The face capture script should start running.
+3. Wait until training is complete.
+4. The browser should be redirected to the login page now.
 
 ## Project Description
 
